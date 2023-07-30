@@ -33,17 +33,19 @@ class DolarRobot(object):
     def dolar_today(self) -> str:
         return self.__dolar
 
-    def sent_mail(self, sender: str, receiver: str, password: str, /) -> None:
+    def sent_mail(self, sender: str, receiver: str, password: str, smtp_server: str = 'smtp.office365.com', port: int = 587, /) -> None:
         """
         :param sender: Endereço de email do remente.
         :param receiver: Endereço de email do destinatário.
         :param password: Senha de email remetente.
+        :param smtp_server: Servidor smtp. (default = outlook)
+        :param port: Porta smtp. (default = 587)
         """
         self.__message['from'] = sender
         self.__message['To'] = receiver
         self.__message['Subject'] = 'Cotação do dolar.'
         self.__message.attach(MIMEText(self.__email.format(self.dolar_today, self.date)))
-        session = smtplib.SMTP('smtp.office365.com', 587)
+        session = smtplib.SMTP(smtp_server, port)
         session.starttls()
         session.login(sender, password)
         session.sendmail(sender, receiver, self.__message.as_string())
