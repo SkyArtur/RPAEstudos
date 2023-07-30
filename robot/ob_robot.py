@@ -33,7 +33,7 @@ class DolarRobot(object):
     def dolar_today(self) -> str:
         return self.__dolar
 
-    def sent_mail(self, sender: str, receiver: str, password: str, smtp_server: str = 'smtp.office365.com', port: int = 587, /) -> None:
+    def sent_mail(self, sender: str, receiver: str, password: str, smtp_server: str, port: int, /) -> None:
         """
         :param sender: Endereço de email do remente.
         :param receiver: Endereço de email do destinatário.
