@@ -38,8 +38,8 @@ class DolarRobot(object):
         :param sender: Endereço de email do remente.
         :param receiver: Endereço de email do destinatário.
         :param password: Senha de email remetente.
-        :param smtp_server: Servidor smtp. (default = outlook)
-        :param port: Porta smtp. (default = 587)
+        :param smtp_server: Servidor smtp.
+        :param port: Porta smtp.
         """
         self.__message['from'] = sender
         self.__message['To'] = receiver
