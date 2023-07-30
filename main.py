@@ -8,8 +8,7 @@ if __name__ == '__main__':
     element_t = '//*[@id="comercial"]'
     with open(file_password, encoding='utf8') as file:
         data_user = json.load(file)
-    receivers = ['email1@gmail.com', 'email2@hotmail.com', 'email3@gmail.com']
+    receiver = 'email@email.com'
     robot = DolarRobot(url_t, element_t)
     robot.execute_robot()
-    for receiver in receivers:
-        robot.sent_mail(data_user['email'], receiver, data_user['password'])
+    robot.sent_mail(data_user['email'], receiver, data_user['password'])
