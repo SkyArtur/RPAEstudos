@@ -1,6 +1,4 @@
-from pathlib import Path
 from robot import DolarRobot
-import json
 
 if __name__ == '__main__':
     url_t = 'https://melhorcambio.com/dolar-hoje'
